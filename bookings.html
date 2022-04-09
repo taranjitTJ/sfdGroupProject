@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="./images/flight.png">
+    
+
+    <title>Book Flight</title>
+</head>
+<body class="booking">
+    <div class="container">
+        <div class="header">
+            <h1>Let the journey begin</h1>
+        </div>
+        <div class="radio-group">
+            <label class="radio">
+                <input type="radio" value="return" name="trip">
+                <span></span>Round-trip
+                
+            </label>
+            <label class="radio" id="one-way">
+                <input type="radio" value="single" name="trip">
+                <span></span>One-way
+                
+            </label>
+        </div>
+        <br>
+        <div class="city" id="city">
+            <div class="form-control" id="from">
+                <label for="from">Flying From</label>
+                <input type="from" id="city-from" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control" id="to">
+                <label for="to">Flying To</label>
+                <input type="to" id="city-to"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            
+        </div>
+        <div class="travel-date" id="travel-date">
+            <div class="form-control" id="departure">
+                <label>Departing</label>
+                <input type="date" id="dt1" name="" placeholder="dd-mm-yyyy" value="" >
+            </div>
+            <div class="form-control" id="arrival">
+                <label>Returning</label>
+                <input type="date" id="dt2" name="" placeholder="dd-mm-yyyy" value="">
+            </div>
+        </div>
+        <br>
+        
+        <div class="form-control" id="travel-options">
+            <label>Travelclass</label>
+            <div class="select">
+                <select class="custom-select" id="travel-class">
+                    <option value="1">Economy class</option>
+                    <option value="2">Business class</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="passengers" id="passengers">
+            <div class="form-control">
+                <label>Adults</label>
+                <input  type="number" value= "1" step="1" placeholder="1" min="1">
+            </div>
+            <div class="form-control">
+                <label>Children</label>
+                <input type="number" value="0" step="1" placeholder="0" min="0">
+            </div>
+        </div>
+        
+        <div class="passenger" id="passenger">
+            <div class="passenger1" id="passenger1">
+                <label class="form-control">Passenger 1 Details:</P></label>
+                <div class="name" id="name">
+                    <div class="form-control">
+                        <label for="first-name">First Name</label>
+                        <input type="first-name" id="first-name" />
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+                    <div class="form-control">
+                        <label for="Last-name">Last Name</label>
+                        <input type="Last-name" id="last-name" />
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+                </div>
+                <div class="genger-radio-group" id="gender">
+                    <label class="form-control">Gender</label>
+                    <label class="radio">
+                        <input type="radio" value="return" name="trip">
+                        <span></span>Male
+                        
+                    </label>
+                    <label class="radio" id="one-way">
+                        <input type="radio" value="single" name="trip">
+                        <span></span>Female
+                        
+                    </label>
+                    <label class="radio" id="one-way">
+                        <input type="radio" value="single" name="trip">
+                        <span></span>Prefer not to answer
+                        
+                    </label>
+                </div>
+                <div class="form-control" >
+                    <label for="age">Age</label>
+                    <input type="age" id="p1-age" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

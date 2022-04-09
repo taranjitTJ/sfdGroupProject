@@ -26,6 +26,13 @@ body {
 	min-height: 100vh;
 	margin: 0;
 }
+body .booking{
+	display: flex;
+}
+body.registration{
+	background-image: url("./images/registrationBackground.png");
+    background-size: cover;
+}
 .flight-page{
     display:flex;
 }
@@ -42,11 +49,208 @@ body {
     display: inline;
     inline-size: 200px;
     margin-top: 50px;
-    margin-left: 50px;
+	margin-right: 50px;
     font-size: 50px;
     font-style: italic;
     
-    color: #ff9900;
+    color: #29241c;
+}
+#new-user{
+    padding: 20px;
+    display: inline;
+    text-align: center;
+    margin: 20px;
+    
+}
+/* #new-user a{
+    display: inline;
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+} */
+
+.registration .container{
+	margin-left:50px;
+    margin-right:auto;
+    float: left;
+}
+
+.booking .container{
+	margin: auto;
+	width: auto;
+}
+.booking .container h1{
+	color: antiquewhite;
+	font-size: 70px;
+}
+.booking .radio-group{
+	display: inline-block;
+	position: relative;
+	padding-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.booking .form-control{
+	font-size: 24px;
+	font-weight: 500;
+	color: #fff;
+	display: block;
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	height: 100%;
+}
+#passenger1{
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	padding-bottom: 20px;
+}
+#travel-date{
+	
+	display: flex;
+	
+
+}
+
+#travel-date input[type="date"]{
+	height: 50px;
+	font-size: 20px;
+
+}
+#passengers, #travel-options{
+	display: flex;
+	
+}
+#passengers input[type="number"]{
+	height: 60px;
+	font-size: 20px;
+}
+select {
+	
+	appearance: none;
+	
+	background-color: transparent;
+	border: none;
+	padding: 0 1em 0 0;
+	margin: 0;
+	width: 100%;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: inherit;
+	line-height: inherit;
+	outline: none;
+  }
+:root {
+	--select-border: #777;
+	--select-focus: blue;
+	--select-arrow: var(--select-border);
+  }
+  select::-ms-expand {
+	display: none;
+  }
+.select {
+	margin-left: 20px;
+	display: grid;
+	width: 100%;
+	min-width: 15ch;
+	max-width: 30ch;
+	border: 1px solid var(--select-border);
+	border-radius: 0.25em;
+	padding: 0.25em 0.5em;
+	font-size: 1.25rem;
+	cursor: pointer;
+	line-height: 1.1;
+	background-color: #fff;
+	background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+	grid-template-areas: "select";
+	align-items: center;
+  }
+  select,
+.select:after {
+  grid-area: select;
+  justify-self: end;
+}
+.select::after {
+	content: "";
+	width: 0.8em;
+	height: 0.5em;
+	background-color: var(--select-arrow);
+	clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  }
+  
+#passengers input[type="number"]{
+	height: 20px;
+}
+#city, #name{
+		display: flex;
+}
+.radio-group, .gender-radio-group{
+	border-bottom: 1px solid #3833338e;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	display: flex;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+#gender{
+	margin: 20px;
+}
+#one-way{
+	margin-left: 50px;
+}
+.booking .radio{
+	font-size: 24px;
+	font-weight: 500;
+	text-transform: capitalize;
+	display: inline-block;
+	color: #fff;
+	position: relative;
+	padding-left: 30px;
+	cursor: pointer;
+	
+}
+.booking .radio + .radio{
+	margin-left: 20px;
+
+}
+.radio input[type="radio"]{
+	display: none;
+
+}
+.radio span{
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	border: 3px solid #00aceb;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 7px;
+}
+
+.radio span:after{
+	content: "";
+	height: 8px;
+	width: 8px;
+	background: #00aceb;
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	border-radius: 50%;
+	transition: 300ms ease-in-out 0s;
+
+}
+#gender{
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	border-radius: 20px;
+	padding-left: 30px;
+	padding-bottom: 20px;
+}
+
+.radio input[type="radio"]:checked ~ span:after{
+	transform: translate(-50%, -50%) scale(1);
+
 }
 .container {
     margin-left:auto;
