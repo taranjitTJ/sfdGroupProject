@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="./images/flight.png">
-    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="Stylesheet"
+    type="text/css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
     <title>Book Flight</title>
 </head>
@@ -37,16 +41,16 @@
             </div>
             <br>
             <div class="city" id="city">
-                <div class="form-control" id="from">
+                <div class="form-control">
                     <label for="from">Flying From</label>
-                    <input type="from" id="city-from" />
+                    <input type="text" id="flyingFrom" />
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error message</small>
                 </div>
-                <div class="form-control" id="to">
+                <div class="form-control" >
                     <label for="to">Flying To</label>
-                    <input type="to" id="city-to"/>
+                    <input type="text" id="flyingTo"/>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error message</small>
@@ -54,13 +58,19 @@
                 
             </div>
             <div class="travel-date" id="travel-date">
-                <div class="form-control" id="departure">
+                <div class="form-control">
                     <label>Departing</label>
-                    <input type="date" id="dt1" name="" placeholder="dd-mm-yyyy" value="" >
+                    <input type="date" id="departing" name="" placeholder="dd-mm-yyyy" value="" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i><br>
+                    <small id="depart-date-error">Error message</small>
                 </div>
                 <div class="form-control" id="arrival">
                     <label>Returning</label>
-                    <input type="date" id="dt2" name="" placeholder="dd-mm-yyyy" value="">
+                    <input type="date" id="returning" name="" placeholder="dd-mm-yyyy" value=""/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i><br>
+                    <small id="return-date-error">Error message</small>
                 </div>
             </div>
             <br>
@@ -78,11 +88,11 @@
             <div class="passengers" id="passengers">
                 <div class="form-control">
                     <label>Adults</label>
-                    <input  type="number" value= "1" step="1" placeholder="1" min="1">
+                    <input id="adults" type="number" value= "0" step="1" placeholder="1" min="1" max="2">
                 </div>
                 <div class="form-control">
                     <label>Children</label>
-                    <input type="number" value="0" step="1" placeholder="0" min="0">
+                    <input id="children" type="number" value="0" step="1" placeholder="0" min="0" max="1">
                 </div>
             </div>
             
@@ -92,43 +102,59 @@
                     <div class="name" id="name">
                         <div class="form-control">
                             <label for="first-name">First Name</label>
-                            <input type="first-name" id="first-name" />
+                            <input type="text" id="first-name1" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="form-control">
                             <label for="Last-name">Last Name</label>
-                            <input type="Last-name" id="last-name" />
+                            <input type="text" id="last-name1" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="form-control" >
                             <label for="age">Age</label>
-                            <input type="age" id="p1-age" />
+                            <input type="text" id="p1-age" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
-                            <small>Error message</small>
+                            <small >Error message</small>
                         </div>
                     </div>
+                    <div class="form-control" >
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small id="name1-error">Error message</small>
+                    </div>
+                    <div class="form-control" >
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small id="age1-error">Error message</small>
+                    </div>
+
                     <div class="genger-radio-group" id="gender">
                         <label class="form-control">Gender</label>
-                        <label class="radio">
-                        <input type="radio" value="Male" name="gender1">
+                        <label class="radio" >
+                        <input type="radio" value="Male" name="gender1" id="gender-male1">
                         <span></span>Male
                             
                         </label>
                         <label class="radio">
-                            <input type="radio" value="female" name="gender1">
+                            <input type="radio" value="female" name="gender1" id="gender-female1">
                             <span></span>Female
                             
                         </label>
                         <label class="radio" >
-                            <input type="radio" value="no-answer" name="gender1">
+                            <input type="radio" value="no-answer" name="gender1" id="gender-no1">
                             <span></span>Prefer not to answer
                             
                         </label>
+                        <div class="form-control" >
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small id="gender1-error">Error message</small>
+                        </div>
                     </div>
                             
                 </div>
@@ -137,21 +163,21 @@
                     <div class="name" id="name">
                         <div class="form-control">
                             <label for="first-name">First Name</label>
-                            <input type="first-name" id="first-name" />
+                            <input type="first-name" id="first-name2" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="form-control">
                             <label for="Last-name">Last Name</label>
-                            <input type="Last-name" id="last-name" />
+                            <input type="Last-name" id="last-name2" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="form-control" >
                             <label for="age">Age</label>
-                            <input type="age" id="p1-age" />
+                            <input type="age" id="p2-age" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
@@ -159,18 +185,18 @@
                     </div>
                     <div class="genger-radio-group" id="gender">
                         <label class="form-control">Gender</label>
-                        <label class="radio">
-                        <input type="radio" value="Male" name="gender2">
+                        <label class="radio" id="gender2">
+                        <input type="radio" value="Male" name="gender2" id="gender-male2">
                         <span></span>Male
                             
                         </label>
                         <label class="radio">
-                            <input type="radio" value="female" name="gender2">
+                            <input type="radio" value="female" name="gender2" id="gender-female2">
                             <span></span>Female
                             
                         </label>
                         <label class="radio" >
-                            <input type="radio" value="no-answer" name="gender2">
+                            <input type="radio" value="no-answer" name="gender2" id="gender-no2">
                             <span></span>Prefer not to answer
                             
                         </label>
@@ -182,21 +208,21 @@
                     <div class="name" id="name">
                         <div class="form-control">
                             <label for="first-name">First Name</label>
-                            <input type="first-name" id="first-name" />
+                            <input type="first-name" id="first-name3" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="form-control">
                             <label for="Last-name">Last Name</label>
-                            <input type="Last-name" id="last-name" />
+                            <input type="Last-name" id="last-name3" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="form-control" >
                             <label for="age">Age</label>
-                            <input type="age" id="p1-age" />
+                            <input type="age" id="p3-age" />
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
@@ -205,17 +231,17 @@
                     <div class="genger-radio-group" id="gender">
                         <label class="form-control">Gender</label>
                         <label class="radio">
-                        <input type="radio" value="Male" name="gender3">
+                        <input type="radio" value="Male" name="gender3" id="gender-male3">
                         <span></span>Male
                             
                         </label>
                         <label class="radio">
-                            <input type="radio" value="female" name="gender3">
+                            <input type="radio" value="female" name="gender3" id="gender-female3">
                             <span></span>Female
                             
                         </label>
                         <label class="radio" >
-                            <input type="radio" value="no-answer" name="gender3">
+                            <input type="radio" value="no-answer" name="gender3" id="gender-no3">
                             <span></span>Prefer not to answer
                             
                         </label>
