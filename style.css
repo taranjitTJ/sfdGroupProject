@@ -33,6 +33,10 @@ body.registration{
 	background-image: url("./images/registrationBackground.png");
     background-size: cover;
 }
+body.booking{
+	background-image: url("./images/booking-background.jpg");
+    background-size:cover;
+}
 .flight-page{
     display:flex;
 }
@@ -62,12 +66,6 @@ body.registration{
     margin: 20px;
     
 }
-/* #new-user a{
-    display: inline;
-    text-align: center;
-    justify-content:center;
-    align-items: center;
-} */
 
 .registration .container{
 	margin-left:50px;
@@ -81,7 +79,13 @@ body.registration{
 }
 .booking .container h1{
 	color: antiquewhite;
-	font-size: 70px;
+	font-size: 60px;
+}
+#payment-icons{
+	
+	text-align:end;
+	border-radius: 15px;
+	padding-right: 60px;
 }
 .booking .radio-group{
 	display: inline-block;
@@ -100,34 +104,35 @@ body.registration{
 	padding: 20px;
 	height: 100%;
 }
-#passenger1{
+#passenger1, #passenger2, #passenger3, #meal-options{
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 	padding-bottom: 20px;
 }
-#travel-date{
+#travel-date, #address{
 	
 	display: flex;
-	
-
 }
-
+#p1-age{
+	width: 100px;
+	
+}
 #travel-date input[type="date"]{
 	height: 50px;
 	font-size: 20px;
 
 }
-#passengers, #travel-options{
+#passengers, #travel-options, #email-phone, #meal-options, #payment-options{
 	display: flex;
 	
 }
 #passengers input[type="number"]{
 	height: 60px;
 	font-size: 20px;
+	width: 100px;
 }
 select {
 	
 	appearance: none;
-	
 	background-color: transparent;
 	border: none;
 	padding: 0 1em 0 0;
@@ -156,7 +161,7 @@ select {
 	border: 1px solid var(--select-border);
 	border-radius: 0.25em;
 	padding: 0.25em 0.5em;
-	font-size: 1.25rem;
+	font-size: 1.17rem;
 	cursor: pointer;
 	line-height: 1.1;
 	background-color: #fff;
@@ -182,6 +187,7 @@ select {
 }
 #city, #name{
 		display: flex;
+		
 }
 .radio-group, .gender-radio-group{
 	border-bottom: 1px solid #3833338e;

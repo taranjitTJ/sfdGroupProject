@@ -43,7 +43,10 @@ function checkInputs() {
 	
 	if(passwordValue === '') {
 		setErrorFor(password, 'Password cannot be blank');
-	} else {
+	}else if(passwordValue.length < 8){
+		setErrorFor(password, 'Your password is atleast 8 charachters long');
+	} 
+	else {
 		setSuccessFor(password);
 		validPass = true;
 	}
@@ -73,16 +76,6 @@ function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
-function setDate() {
-	d = new Date(document.getElementById("dt").value);
-	dt = d.getDate();
-	mn = d.getMonth();
-	mn++;
-	yy = d.getFullYear();
-	document.getElementById("ndt").value = dt + "/" + mn + "/" + yy
-	document.getElementById("ndt").hidden = false;
-	document.getElementById("dt").hidden = true;
-  }
 
 
 
@@ -90,16 +83,3 @@ function setDate() {
 
 
 
-
-// // SOCIAL PANEL JS
-// const floating_btn = document.querySelector('.floating-btn');
-// const close_btn = document.querySelector('.close-btn');
-// const social_panel_container = document.querySelector('.social-panel-container');
-
-// floating_btn.addEventListener('click', () => {
-// 	social_panel_container.classList.toggle('visible')
-// });
-
-// close_btn.addEventListener('click', () => {
-// 	social_panel_container.classList.remove('visible')
-// });

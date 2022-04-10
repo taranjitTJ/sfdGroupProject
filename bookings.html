@@ -16,118 +16,284 @@
         <div class="header">
             <h1>Let the journey begin</h1>
         </div>
-        <div class="radio-group">
-            <label class="radio">
-                <input type="radio" value="return" name="trip">
-                <span></span>Round-trip
-                
-            </label>
-            <label class="radio" id="one-way">
-                <input type="radio" value="single" name="trip">
-                <span></span>One-way
-                
-            </label>
-        </div>
-        <br>
-        <div class="city" id="city">
-            <div class="form-control" id="from">
-                <label for="from">Flying From</label>
-                <input type="from" id="city-from" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
+        <form id="form" class="form">
+            <div class="radio-group" id="trip">
+                <label class="radio">
+                    <input type="radio" value="return-trip" name="trip" id="round-trip">
+                    <span></span>Round-trip
+                    
+                    
+                </label>
+                <label class="radio">
+                    <input type="radio" value="single" name="trip" id="one-way">
+                    <span></span>One-way
+                    
+                </label>
+                <div class="form-control" >
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small id="trip-error">Error message</small>
+                </div>
             </div>
-            <div class="form-control" id="to">
-                <label for="to">Flying To</label>
-                <input type="to" id="city-to"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
+            <br>
+            <div class="city" id="city">
+                <div class="form-control" id="from">
+                    <label for="from">Flying From</label>
+                    <input type="from" id="city-from" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control" id="to">
+                    <label for="to">Flying To</label>
+                    <input type="to" id="city-to"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                
+            </div>
+            <div class="travel-date" id="travel-date">
+                <div class="form-control" id="departure">
+                    <label>Departing</label>
+                    <input type="date" id="dt1" name="" placeholder="dd-mm-yyyy" value="" >
+                </div>
+                <div class="form-control" id="arrival">
+                    <label>Returning</label>
+                    <input type="date" id="dt2" name="" placeholder="dd-mm-yyyy" value="">
+                </div>
+            </div>
+            <br>
+            
+            <div class="form-control" id="travel-options">
+                <label>Travelclass</label>
+                <div class="select">
+                    <select class="custom-select" id="travel-class">
+                        <option value="1">Economy class</option>
+                        <option value="2">Business class</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="passengers" id="passengers">
+                <div class="form-control">
+                    <label>Adults</label>
+                    <input  type="number" value= "1" step="1" placeholder="1" min="1">
+                </div>
+                <div class="form-control">
+                    <label>Children</label>
+                    <input type="number" value="0" step="1" placeholder="0" min="0">
+                </div>
             </div>
             
-        </div>
-        <div class="travel-date" id="travel-date">
-            <div class="form-control" id="departure">
-                <label>Departing</label>
-                <input type="date" id="dt1" name="" placeholder="dd-mm-yyyy" value="" >
-            </div>
-            <div class="form-control" id="arrival">
-                <label>Returning</label>
-                <input type="date" id="dt2" name="" placeholder="dd-mm-yyyy" value="">
-            </div>
-        </div>
-        <br>
-        
-        <div class="form-control" id="travel-options">
-            <label>Travelclass</label>
-            <div class="select">
-                <select class="custom-select" id="travel-class">
-                    <option value="1">Economy class</option>
-                    <option value="2">Business class</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="passengers" id="passengers">
-            <div class="form-control">
-                <label>Adults</label>
-                <input  type="number" value= "1" step="1" placeholder="1" min="1">
-            </div>
-            <div class="form-control">
-                <label>Children</label>
-                <input type="number" value="0" step="1" placeholder="0" min="0">
-            </div>
-        </div>
-        
-        <div class="passenger" id="passenger">
-            <div class="passenger1" id="passenger1">
-                <label class="form-control">Passenger 1 Details:</P></label>
-                <div class="name" id="name">
-                    <div class="form-control">
-                        <label for="first-name">First Name</label>
-                        <input type="first-name" id="first-name" />
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Error message</small>
+            <div class="passenger" id="passenger">
+                <div class="passenger1" id="passenger1">
+                    <label class="form-control">Passenger 1 Details:</P></label>
+                    <div class="name" id="name">
+                        <div class="form-control">
+                            <label for="first-name">First Name</label>
+                            <input type="first-name" id="first-name" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="Last-name">Last Name</label>
+                            <input type="Last-name" id="last-name" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control" >
+                            <label for="age">Age</label>
+                            <input type="age" id="p1-age" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
                     </div>
-                    <div class="form-control">
-                        <label for="Last-name">Last Name</label>
-                        <input type="Last-name" id="last-name" />
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Error message</small>
-                    </div>
-                </div>
-                <div class="genger-radio-group" id="gender">
-                    <label class="form-control">Gender</label>
-                    <label class="radio">
-                        <input type="radio" value="return" name="trip">
+                    <div class="genger-radio-group" id="gender">
+                        <label class="form-control">Gender</label>
+                        <label class="radio">
+                        <input type="radio" value="Male" name="gender1">
                         <span></span>Male
-                        
-                    </label>
-                    <label class="radio" id="one-way">
-                        <input type="radio" value="single" name="trip">
-                        <span></span>Female
-                        
-                    </label>
-                    <label class="radio" id="one-way">
-                        <input type="radio" value="single" name="trip">
-                        <span></span>Prefer not to answer
-                        
-                    </label>
+                            
+                        </label>
+                        <label class="radio">
+                            <input type="radio" value="female" name="gender1">
+                            <span></span>Female
+                            
+                        </label>
+                        <label class="radio" >
+                            <input type="radio" value="no-answer" name="gender1">
+                            <span></span>Prefer not to answer
+                            
+                        </label>
+                    </div>
+                            
                 </div>
-                <div class="form-control" >
-                    <label for="age">Age</label>
-                    <input type="age" id="p1-age" />
+                <div class="passenger2" id="passenger2">
+                    <label class="form-control">Passenger 2 Details:</P></label>
+                    <div class="name" id="name">
+                        <div class="form-control">
+                            <label for="first-name">First Name</label>
+                            <input type="first-name" id="first-name" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="Last-name">Last Name</label>
+                            <input type="Last-name" id="last-name" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control" >
+                            <label for="age">Age</label>
+                            <input type="age" id="p1-age" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                    </div>
+                    <div class="genger-radio-group" id="gender">
+                        <label class="form-control">Gender</label>
+                        <label class="radio">
+                        <input type="radio" value="Male" name="gender2">
+                        <span></span>Male
+                            
+                        </label>
+                        <label class="radio">
+                            <input type="radio" value="female" name="gender2">
+                            <span></span>Female
+                            
+                        </label>
+                        <label class="radio" >
+                            <input type="radio" value="no-answer" name="gender2">
+                            <span></span>Prefer not to answer
+                            
+                        </label>
+                    </div>
+                            
+                </div>
+                <div class="passenger3" id="passenger3">
+                    <label class="form-control">Passenger 3 Details:</P></label>
+                    <div class="name" id="name">
+                        <div class="form-control">
+                            <label for="first-name">First Name</label>
+                            <input type="first-name" id="first-name" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="Last-name">Last Name</label>
+                            <input type="Last-name" id="last-name" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control" >
+                            <label for="age">Age</label>
+                            <input type="age" id="p1-age" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                    </div>
+                    <div class="genger-radio-group" id="gender">
+                        <label class="form-control">Gender</label>
+                        <label class="radio">
+                        <input type="radio" value="Male" name="gender3">
+                        <span></span>Male
+                            
+                        </label>
+                        <label class="radio">
+                            <input type="radio" value="female" name="gender3">
+                            <span></span>Female
+                            
+                        </label>
+                        <label class="radio" >
+                            <input type="radio" value="no-answer" name="gender3">
+                            <span></span>Prefer not to answer
+                            
+                        </label>
+                    </div>
+                            
+                </div>
+
+            </div>
+            <div class="form-control" id="meal-options">
+                <label>Meal Type</label>
+                <div class="select">
+                    <select class="custom-select" id="meal-class">
+                        <option value="1">Non-Vegetarian</option>
+                        <option value="2">Vegetarian</option>
+                        <option value="3">Vegan</option>
+                    </select>
+                </div>
+            </div>
+            <div class="address" id="address">
+                <div class="form-control">
+                    <label for="address">Address</label>
+                    <input type="email" id="address" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="city">City</label>
+                    <input type="city" id="city" />
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error message</small>
                 </div>
             </div>
+            <div class="email-phone" id="email-phone">
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="example@domain.com" id="email" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="phone-no">Phone No.</label>
+                    <input type="phone-no" id="phone-no" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+            </div>
+            <div class="form-control" id="payment-options">
+                <label>Payment Method</label>
+                <div class="select">
+                    <select class="custom-select" id="payment-class">
+                        <option value="1">Credit Card</option>
+                        <option value="2">Debit Card</option>
+                        <option value="3">PayPal</option>
+                        <option value="4">Google Pay</option>
+                        <option value="5">Apple Pay</option>
+                        <option value="6">Bank Transfer</option>
 
-        </div>
+                    </select>
+                </div>
+                
+            </div>
+            <div id="payment-icons">
+                <img src="./images/paypal.png">
+                <img src="./images/visa.png">
+                <img src="./images/mastercard.png">
+                <img src="./images/apple-pay.png">                            
+                <img src="./images/google-pay.png">
+                
+             </div><br><br><br>
+            <button id="submit">Submit</button>
+        </form>
+
     </div>
-    <script src="script.js"></script>
+    <script src="bookingsScript.js"></script>
 </body>
 </html>
 
