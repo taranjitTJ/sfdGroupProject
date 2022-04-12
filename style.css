@@ -30,7 +30,7 @@ body .booking{
 	display: flex;
 }
 body.registration{
-	background-image: url("./images/registrationBackground.png");
+	background-image: url("./images/Background 7.png");
     background-size: cover;
 }
 body.booking{
@@ -54,7 +54,7 @@ body.booking{
     inline-size: 200px;
     margin-top: 50px;
 	margin-right: 50px;
-    font-size: 50px;
+    font-size: 30px;
     font-style: italic;
     
     color: #29241c;
@@ -67,10 +67,15 @@ body.booking{
     
 }
 
+.registration #name{
+	margin: 5px;
+}
 .registration .container{
-	margin-left:50px;
+	margin:50px;
     margin-right:auto;
     float: left;
+	padding: 30px;
+	width: 500px;
 }
 
 .booking .container{
@@ -115,6 +120,9 @@ body.booking{
 #p1-age{
 	width: 100px;
 	
+}
+#title{
+	width:65px;
 }
 #travel-date input[type="date"]{
 	height: 50px;
@@ -313,11 +321,11 @@ select {
 	border-color: #777;
 }
 
-.form-control.success input {
+.flight-page.form-control.success input {
 	border-color: #2ecc71;
 }
 
-.form-control.error input {
+.flight-page.form-control.error input {
 	border-color: #e74c3c;
 }
 
@@ -336,6 +344,7 @@ select {
 .form-control.error i.fa-exclamation-circle {
 	color: #e74c3c;
 	visibility: visible;
+	
 }
 .booking .form-control.error i.fa-exclamation-circle {
 	color: #e74c3c;
@@ -356,6 +365,7 @@ select {
 	bottom: 0;
 	left: 20px;
 	visibility: hidden;
+	
 }
 .form-control.error small {
 	visibility: visible;

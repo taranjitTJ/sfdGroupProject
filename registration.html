@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="./images/flight.png">
-    <title>Registration Form</title>
-</head>
-<body class="registration">
-    <div class="container">
-        <form method="post" action="www.gmail.com" target="_blank">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="./images/Background 7.webp">
+        <link rel="icon" href="./images/flight.png">
+        <title>Registration Form</title>
+    </head>
+    <body class="registration">
+        <div class="container">
+            <form method="post" action="www.gmail.com" target="_blank">
+                <h1> Registration Form</h1><br> <br>
+                <h3>Personal Information</h3><br>​
+                <div class="details" id="details">
+                    <div class="name" id="name">
+                        <div class="form-control">
+                            <label >Title</label>
+                            <input type="text" id="title" />                            
+                        </div>
+                        <div class="form-control">
+                            <label for="Last-name">First Name</label>
+                            <input type="text" id="last-name" />                            
+                        </div>
+                        <div class="form-control" >
+                            <label for="age">Last Name</label>
+                            <input type="text" id="first-name" />                            
+                        </div>
+                    </div>
+                </div>
+                Gender <input type="radio" name="gender" />Male
+                <input type="radio" name="gender" value="f" />Female<br /><br />
+                DOB <input type="date" name="date" /><br /><br /><br>
+    ​
+                <h3>Contact Information</h3><br>
+                <div class="email-phone" id="email-phone">
+                    <div class="form-control">
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="example@domain.com" id="email" />
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Oops! Something Went Wrong!</small>
+                    </div>
+                    <div class="form-control">
+                        <label for="phone-no">Phone No.</label>
+                        <input type="text" id="phone-no" />
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small id="phone-error">Oops! Something Went Wrong!</small>
+                    </div>
+                </div>
+                <!--<button id="logIn">Register</button>-->
+                <a href="index.html">Register</a>
+            </form> 
             
         
-    ​
-            <h1> Registration Form</h1>
-            
-            Username   <input type="text"     name="uname"/>  <br></br>
-            Password   <input type="password" name="pwd"/>  <br /><br />
-            DOB        <input type="date"     name="date"/><br /><br />
-            Email      <input type="email"    name="email"/><br /><br />
-            Gender     <input type="radio"    name="gender"/>Male
-                    <input type="radio"    name="gender" value="f" />Female<br /><br />
-            Hobbies    <input type="checkbox" name="hb"     value="hp" />Playing
-                    <input type="checkbox" name="hb"     value="hd" />Dancing
-                    <input type="checkbox" name="hb"     value="hs" />Singing<br /><br />
-            Country
-            <select name="cntry">	
-            <option>Australia</option>
-            <option>India</option>
-            <option>Newzeland</option>
-            <option>USA</option>
-            <option>UAE</option>
-            <option>Canada</option>
-            </select>  <br /><br />
-            About yourself<br />
-            <textarea rows="5" cols="30" name="data">
-            </textarea> <br /><br />
-            <button type="submit"> Register </button>   
-        
-        </form>
-    </div>
-    ​
+        </div>
+        ​
     </body>
 </html>

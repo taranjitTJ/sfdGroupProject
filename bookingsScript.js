@@ -27,8 +27,10 @@ const genderFemale3 = document.getElementById('gender-female3');
 const genderNo1 = document.getElementById('gender-no1');
 const genderNo2 = document.getElementById('gender-no2');
 const genderNo3 = document.getElementById('gender-no3');
-const pGender1 = document.getElementById('p1-gender');
-
+const email = document.getElementById('email');
+const address = document.getElementById('address1');
+const city = document.getElementById('addresscity');
+const phone = document.getElementById('phone-no');
 
 submit.addEventListener("click", validate);
 
@@ -36,7 +38,7 @@ function validate(e){
     
 	e.preventDefault();
 	if(checkInputs()){
-		//location.href= "thanks.html";
+		location.href= "thanks.html";
     }
 }
 
@@ -49,7 +51,7 @@ function checkInputs() {
 	
 	if((roundTrip.checked) || (oneWay.checked)) {
         document.getElementById("trip-error").style.visibility= "hidden";
-          
+        valid = true;  
         
     }
     else {
@@ -62,12 +64,14 @@ function checkInputs() {
         valid = false;
 	} else{
         setSuccessFor(flyingFrom);
+        valid = true;
     }
     if (flyingToValue === '') {
 		setErrorFor(flyingTo, 'Flying to city cannot be blank');
         valid = false;
 	} else {
 		setSuccessFor(flyingTo);
+        valid = true;
 		
 	}
 
@@ -98,6 +102,7 @@ function checkInputs() {
         }
         else{
             document.getElementById("name1-error").style.visibility= "hidden";
+            valid = true;
         }
 
         if(ageVal1 === ''){
@@ -115,11 +120,12 @@ function checkInputs() {
         }
         else{
             document.getElementById("age1-error").style.visibility= "hidden";
+            valid = true;
         }
 
         if((genderMale1.checked) || (genderFemale1.checked) || (genderNo1.checked)) {
             document.getElementById("gender1-error").style.visibility= "hidden";
-              
+            
             
         }
         else {
@@ -127,15 +133,187 @@ function checkInputs() {
             document.getElementById("gender1-error").style.visibility= "visible";
             document.getElementById("gender1-error").style.color = "#e74c3c";
             document.getElementById("gender1-error").innerText = 'Select gender of the passenger';
-            valid = false;
+            valid = true;
+            
         }
     }
 
-    
+    const fnValue2 = firstName2.value.trim();
+    const lnValue2 = lastName2.value.trim();
+    const fullName2 = fnValue2+lnValue2;
+    const ageVal2 = pAge2.value.trim();
 
+    if(firstName2.disabled === false){
+        if(fnValue2 === ''){
+            
+            document.getElementById("name2-error").style.visibility= "visible";
+            document.getElementById("name2-error").style.color = "#e74c3c";
+            document.getElementById("name2-error").innerText = 'Enter a valid name';
+            valid = false;
+        }
+        else if(fullName2.length <= 5){
+            document.getElementById("name2-error").style.visibility= "visible";
+            document.getElementById("name2-error").style.color = "#e74c3c";
+            document.getElementById("name2-error").innerText = 'Full name must be more than 5 characters';
+            valid = false;
+        }
+        else if(/\d/.test(fullName2)){
+            document.getElementById("name2-error").style.visibility= "visible";
+            document.getElementById("name2-error").style.color = "#e74c3c";
+            document.getElementById("name2-error").innerText = 'Name must not contain any number';
+            valid = false;
+        }
+        else{
+            document.getElementById("name2-error").style.visibility= "hidden";
+        }
 
+        if(ageVal2 === ''){
+            console.log('age empty');
+            document.getElementById("age2-error").style.visibility= "visible";
+            document.getElementById("age2-error").style.color = "#e74c3c";
+            document.getElementById("age2-error").innerText = 'Age must be entered';
+            valid = false;
+        }
+        else if(/[^0-9]/g.test(ageVal2)){
+            document.getElementById("age2-error").style.visibility= "visible";
+            document.getElementById("age2-error").style.color = "#e74c3c";
+            document.getElementById("age2-error").innerText = 'Age must be a number';
+            valid = false;
+        }
+        else{
+            document.getElementById("age2-error").style.visibility= "hidden";
+        }
 
+        if((genderMale2.checked) || (genderFemale2.checked) || (genderNo2.checked)) {
+            document.getElementById("gender2-error").style.visibility= "hidden";
+            
+            
+        }
+        else {
+            
+            document.getElementById("gender2-error").style.visibility= "visible";
+            document.getElementById("gender2-error").style.color = "#e74c3c";
+            document.getElementById("gender2-error").innerText = 'Select gender of the passenger';
+            valid = false;
+        }
+    }
+    const fnValue3 = firstName3.value.trim();
+    const lnValue3 = lastName3.value.trim();
+    const fullName3 = fnValue3+lnValue1;
+    const ageVal3 = pAge3.value.trim();
 
+    if(firstName3.disabled === false){
+        if(fnValue3 === ''){
+            
+            document.getElementById("name3-error").style.visibility= "visible";
+            document.getElementById("name3-error").style.color = "#e74c3c";
+            document.getElementById("name3-error").innerText = 'Enter a valid name';
+            valid = false;
+        }
+        else if(fullName3.length <= 5){
+            document.getElementById("name3-error").style.visibility= "visible";
+            document.getElementById("name3-error").style.color = "#e74c3c";
+            document.getElementById("name3-error").innerText = 'Full name must be more than 5 characters';
+            valid = false;
+        }
+        else if(/\d/.test(fullName3)){
+            document.getElementById("name3-error").style.visibility= "visible";
+            document.getElementById("name3-error").style.color = "#e74c3c";
+            document.getElementById("name3-error").innerText = 'Name must not contain any number';
+            valid = false;
+        }
+        else{
+            document.getElementById("name3-error").style.visibility= "hidden";
+        }
+
+        if(ageVal3 === ''){
+            console.log('age empty');
+            document.getElementById("age3-error").style.visibility= "visible";
+            document.getElementById("age3-error").style.color = "#e74c3c";
+            document.getElementById("age3-error").innerText = 'Age must be entered';
+            valid = false;
+        }
+        else if(/[^0-9]/g.test(ageVal3)){
+            document.getElementById("age3-error").style.visibility= "visible";
+            document.getElementById("age3-error").style.color = "#e74c3c";
+            document.getElementById("age3-error").innerText = 'Age must be a number';
+            valid = false;
+        }
+        else{
+            document.getElementById("age3-error").style.visibility= "hidden";
+        }
+
+        if((genderMale3.checked) || (genderFemale3.checked) || (genderNo3.checked)) {
+            document.getElementById("gender3-error").style.visibility= "hidden";
+            valid = true; 
+            
+        }
+        else {
+            //setErrorFor(pGender1, 'Select gender of the passenger');
+            document.getElementById("gender3-error").style.visibility= "visible";
+            document.getElementById("gender3-error").style.color = "#e74c3c";
+            document.getElementById("gender3-error").innerText = 'Select gender of the passenger';
+            valid = false;
+        }
+    }
+    const emailValue = email.value.trim();
+	
+		
+	if(emailValue === '') {
+		setErrorFor(email, 'Email cannot be blank');
+        valid = false;
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email');
+        valid = false;
+	} else {
+		setSuccessFor(email);
+		
+	}
+    const addressValue = address.value.trim();
+    const cityValue = city.value.trim();
+
+    if(addressValue === ''){
+        setErrorFor(address, 'Please enter address');
+        valid = false;
+    }
+    else{
+        setSuccessFor(address);
+    }
+
+    if(cityValue === ''){
+        setErrorFor(city, 'Please enter city');
+        valid = false;
+    }
+    else{
+        setSuccessFor(city);
+    }    
+
+    const phoneValue = phone.value.trim();
+    if(phoneValue === ''){
+        setErrorFor(phone, 'Enter phone number');
+        valid = false;
+
+    }else if(/[^0-9]/g.test(phoneValue)){
+        setErrorFor(phone, 'Enter only numbers');
+        valid = false;
+    }
+    else if(phoneValue.length !== 10){
+        setErrorFor(phone, 'Enter 10 digits phone number');
+        valid = false;
+    }
+    else{
+        
+        setSuccessFor(phone);
+    }
+
+    submit.onclick = function(e) {
+        if (firstName1.disabled === true) {
+            e.preventDefault();
+            alert("No passenger details are added!");
+            valid = false;
+        }
+    }
+    console.log(valid);
 	return valid;
 }
 
@@ -226,6 +404,77 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $('input[type=radio]').click(function(){
+        if (this.id == "gender-male2"){
+            
+            document.getElementById("gender2-error").style.visibility= "hidden";
+
+            
+        }
+            
+    });
+});
+
+$(document).ready(function(){
+    $('input[type=radio]').click(function(){
+        if (this.id == "gender-female2"){
+            
+            document.getElementById("gender2-error").style.visibility= "hidden";
+
+            
+        }
+            
+    });
+});
+
+$(document).ready(function(){
+    $('input[type=radio]').click(function(){
+        if (this.id == "gender-no2"){
+            
+            document.getElementById("gender2-error").style.visibility= "hidden";
+
+            
+        }
+            
+    });
+});
+$(document).ready(function(){
+    $('input[type=radio]').click(function(){
+        if (this.id == "gender-male3"){
+            
+            document.getElementById("gender3-error").style.visibility= "hidden";
+
+            
+        }
+            
+    });
+});
+
+$(document).ready(function(){
+    $('input[type=radio]').click(function(){
+        if (this.id == "gender-female3"){
+            
+            document.getElementById("gender3-error").style.visibility= "hidden";
+
+            
+        }
+            
+    });
+});
+
+$(document).ready(function(){
+    $('input[type=radio]').click(function(){
+        if (this.id == "gender-no3"){
+            
+            document.getElementById("gender3-error").style.visibility= "hidden";
+
+            
+        }
+            
+    });
+});
+
 departing.addEventListener('change', validateDates);
 returning.addEventListener('change', validateDates);
 function validateDates(){
@@ -262,7 +511,7 @@ children.addEventListener('change', numberOfPassengers);
 
 function numberOfPassengers(){
     let passengers = parseInt(adults.value) + parseInt(children.value);
-    console.log(passengers);
+  
     
     if(passengers === 1){
         firstName1.disabled = false;
@@ -328,35 +577,4 @@ firstName3.disabled = true;
 lastName3.disabled = true;
 pAge3.disabled = true;
 $('input[name=gender3]').attr("disabled",true);
-// $("#departing").on("change",function(){
 
-//     if(departing.value === ''){
-//         setErrorFor(departing, 'No travel date selected');
-//     }
-//     if(departing.value !== ''){
-//         document.getElementById("depart-date-error").style.visibility= "hidden";
-//         $("#departing").css("border", "none");
-//     }
-    
-//     if(departing.value > returning.value){
-//         setErrorFor(returning, 'Return date must be after departing');
-//     }
-//     else{
-//         document.getElementById("return-date-error").style.visibility= "hidden";
-//         $("#departing").css("border", "none");
-//     }
-// });
-// $("#returning").on("change",function(){
-
-//     if(departing.value === ''){
-//         setErrorFor(departing, 'No travel date selected');
-//     }
-    
-//     if(departing.value > returning.value){
-//         setErrorFor(returning, 'Return date must be after departing');
-//     }
-//     else{
-//         document.getElementById("return-date-error").style.visibility= "hidden";
-//         $("#returning").css("border", "none");
-//     }
-// });
